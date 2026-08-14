@@ -1,0 +1,25 @@
+In Google Chrome, open the Emedgene case
+  #go to Filters, 3 dots on the left, click Clear. This clears all filters. 
+#right click Inspect, and then click "export filtered XLSX" button
+#in the inspect windown go to Network, Name (left column) on the "export filtered XLSX" action -> copy -> copy as cURL
+
+curl --url 'https://uhn-staging.emg.illumina.com/api/variant/EMG698416219/filtered_csv?start=0&length=7288&local=false' \
+  -H 'accept: application/json, text/plain, */*' \
+  -H 'accept-language: en-US,en;q=0.9' \
+  -H 'content-type: application/json;charset=UTF-8' \
+  -b 's_ecid=MCMID%7C53187132415882852542492270875718402191; AMCV_A7DF776A5245B2870A490D44%40AdobeOrg=1406116232%7CMCIDTS%7C20657%7CMCMID%7C53187132415882852542492270875718402191%7CMCAAMLH-1785330134%7C7%7CMCAAMB-1785330134%7CRKhpRz8krg2tLO6pguXWp5olkAcUniQYPHaMWWgdJ3xzPWQmdj0y%7CMCOPTOUT-1784732534s%7CNONE%7CMCAID%7CNONE%7CMCSYNCSOP%7C411-20636%7CvVersion%7C2.5.0; _ga=GA1.1.2001708751.1784898168; _gcl_au=1.1.389501096.1784898168; lid=cXVlZW5pZS50c2FuZ0B1aG4uY2E; authType=1; psTokenIssuingAuthorities="https://platform.login.illumina.com/platform-services-manager"; kndctr_A7DF776A5245B2870A490D44_AdobeOrg_identity=CiY1MzE4NzEzMjQxNTg4Mjg1MjU0MjQ5MjI3MDg3NTcxODQwMjE5MVIQCMTH4qH5MxgBKgNWQTYwA_ABnMahg4A0; s_ips=883; s_tp=883; OptanonConsent=isGpcEnabled=0&datestamp=Fri+Aug+14+2026+13%3A23%3A03+GMT-0400+(Eastern+Daylight+Time)&version=202505.2.0&browserGpcFlag=0&isIABGlobal=false&hosts=&consentId=05983f96-5433-4a69-9a95-02b6b62eae59&interactionCount=1&isAnonUser=1&landingPath=NotLandingPage&groups=C0001%3A1%2CC0003%3A1%2CC0005%3A1%2CC0002%3A1%2CC0004%3A1&AwaitingReconsent=false; s_ppv=illumina%2520login%2C100%2C100%2C100%2C883%2C1%2C1; s_plt=0.24%2Cillumina%20login; mbox=session#53187132415882852542492270875718402191-NGsNvc#1786730044; loginUrl=https%3A%2F%2Flogin.illumina.com%2Flogin%2F%3FclientId%3Demedgene%26domain%3Duhn-staging%26rMethod%3DGET%26rURL%3DaHR0cHM6Ly91aG4tc3RhZ2luZy5lbWcuaWxsdW1pbmEuY29t%26isURLEncoded%3Dtrue%26isRedirected%3Dtrue; psToken=dWhuLDA5N2I2ODU3LWNlNGUtM2UwOC1hYmU2LTc0MjUyNDZlYmQ0Yw; idleTimeoutInSeconds=1800; idleTimeoutIntervalCheckInSeconds=840; _ga_RWQ04G1X8S=GS2.1.s1786728029$o10$g1$t1786728217$j27$l0$h0' \
+  -H 'emgauthorization: Bearer <bearer-token>' \
+  -H 'newrelic: eyJ2IjpbMCwxXSwiZCI6eyJ0eSI6IkJyb3dzZXIiLCJhYyI6IjY1MTc1MjEiLCJhcCI6IjEzODYyNTcxODQiLCJpZCI6IjhlZGYxMTFkOTUxZDU1ODQiLCJ0ciI6IjVjOTgyODZkN2E3YzcxYzA2YmU4NGY2NjQwODQzNjY5IiwidGkiOjE3ODY3MzExNjk0MDh9fQ==' \
+  -H 'origin: https://uhn-staging.emg.illumina.com' \
+  -H 'priority: u=1, i' \
+  -H 'referer: https://uhn-staging.emg.illumina.com/' \
+  -H 'sec-ch-ua: "Not=A?Brand";v="99", "Google Chrome";v="151", "Chromium";v="151"' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'sec-ch-ua-platform: "macOS"' \
+  -H 'sec-fetch-dest: empty' \
+  -H 'sec-fetch-mode: cors' \
+  -H 'sec-fetch-site: same-origin' \
+  -H 'traceparent: 00-5c98286d7a7c71c06be84f6640843669-8edf111d951d5584-01' \
+  -H 'tracestate: 6517521@nr=0-1-6517521-1386257184-8edf111d951d5584----1786731169408' \
+  -H 'user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.0.0 Safari/537.36' \
+  --data-raw '{"source":"filter","greater_fields":{"updated_at":"2015-01-01T00:00:00.000Z","depth":0}}'
